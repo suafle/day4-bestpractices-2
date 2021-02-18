@@ -52,6 +52,11 @@ theta = 10
 # Simple testing of the performance of the Python and Scipy implementations
 import time
 
+# Testing the performance of Cython
+t0 = time.time()
+rbf_network_cython(X, beta, theta)
+print("Cython: ", time.time() - t0)
+
 t0 = time.time()
 rbf_network(X, beta, theta)
 print("Python: ", time.time() - t0)
@@ -60,10 +65,6 @@ t0 = time.time()
 rbf_scipy(X, beta)
 print("Scipy: ", time.time() - t0)
 
-# Testing the performance of Cython
-t0 = time.time()
-rbf_network_cython(X, beta, theta)
-print("Cython: ", time.time() - t0)
 
 
 
